@@ -29,15 +29,35 @@ def max_num(num1, num2, num3):
 def min_num(num1, num2, num3):
     smallest = num1
     
-    if num2 > smallest:
+    if num2 < smallest:
         smallest = num2
-    if num3 > smallest:
+    if num3 < smallest:
         smallest = num3
     
     return smallest
 
 result = max_num(num_1, num_2, num_3)
-print ("The largest number is: " + result)
+print ("The largest number is: " + str(result))
 
 result = min_num(num_1, num_2, num_3)
-print ("The smallest number is: " + result)
+print ("The smallest number is: " + str(result))
+
+#3. Leap Year Explorer
+#Task 1: Leap Year Checker
+def leap_year(year):
+
+    if (year % 400 == 0):
+        return True
+    elif (year % 100 == 0):
+        return False
+    elif (year % 4 == 0):
+        return True
+    else:
+        return False
+
+year = int(input("Enter a year: "))
+
+if leap_year(year):
+    print(str(year) + " is a leap year")
+else:
+    print(str(year) + " is not a leap year")
